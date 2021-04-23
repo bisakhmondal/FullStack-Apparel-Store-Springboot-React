@@ -1,0 +1,15 @@
+.bttn {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-dark, .navbar-nav, .nav-link {
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.ffff{
+    color:black;
+    font-size:16px,
+}
