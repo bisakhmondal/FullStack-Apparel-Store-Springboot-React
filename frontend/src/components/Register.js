@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
-
+import putNotification from "./Notification"
+import {useHistory} from "react-router-dom"
+import axios from 'axios'
 const formItemLayout = {
     labelCol: {
       xs: {
@@ -35,10 +37,30 @@ const formItemLayout = {
 
 const Register = () => {
   const [form] = Form.useForm();
+  const history = useHistory()
 
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-  };
+  const send = async values => {
+    try {
+      putNotification("Registering...")
+      const resp = await axios.post("https://localhost:8443/api/v1/registration",
+        {
+          firstName: values.firstname,
+          lastName: values.lastname,
+          email: values.email,
+          password: values.password,
+        }
+      )
+
+      if (resp.status === 200) {
+        putNotification("Registration Successful", resp.data)
+        history.push("/store")
+      }
+    } catch (error) {
+      putNotification("!!Error!!", error.response?.data?.message)
+    }
+
+
+  }
 
 
   return (
@@ -52,7 +74,7 @@ const Register = () => {
       size="large"
       style={{width:"60%"}}
       name="register"
-      onFinish={onFinish}
+      onFinish={send}
       scrollToFirstError
     >
 
