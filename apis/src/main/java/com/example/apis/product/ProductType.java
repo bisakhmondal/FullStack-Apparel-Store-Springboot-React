@@ -1,2 +1,6 @@
-package com.example.apis.product;public enum ProductType {
+package com.example.apis.product;
+
+public enum ProductType {
+    MALE,
+    FEMALE
 }
