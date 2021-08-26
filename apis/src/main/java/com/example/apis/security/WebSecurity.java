@@ -23,9 +23,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     private final UserInfoService userInfoService;
     private final PasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;// jwtFilter;
-//    private final JwtFilter jwtFilter;
-//    private final FilterConfigurer filterConfigurer;
-//    private final CorsFilter corsFilter;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

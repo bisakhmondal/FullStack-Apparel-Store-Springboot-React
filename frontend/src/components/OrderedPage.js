@@ -53,7 +53,7 @@ const OrderedPage = () => {
     return (
         <div className="jumbotron" style={{ backgroundColor: "whitesmoke", minHeight: "100vh"}}>
 <Row style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}>
-                <Col span={20} >   <h1 className="display-4">Cart</h1></Col>
+                <Col span={20} >   <h1 className="display-4">Previously Ordered</h1></Col>
                 {/* <Col span={4} style={{ paddingTop: 50 }} >   <button className="ant-btn ant-btn-danger ant-btn-lg" onClick={checkout} >Checkout</button> </Col> */}
             </Row>
 
